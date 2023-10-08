@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-B">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niver Cmapina</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 62.5%;      
+    }
+
+    #container {
+      width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    select {
+      margin-top: 20px;
+      font-size: 1.6em;
+    }
+
+    #page-content {
+      margin-top: 20px;
+      width: 100%;
+      height: 800px;
+      overflow: auto;
+    }
+
+    footer, p {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.2em;
+      word-spacing: 1.05;
+      color: #009660;
+      word-spacing: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Tema do Projeto</h1>
+    <label for="page-select">Selecione a Página:</label>
+    <select id="page-select">
+      <option value="./index.html">Página 1</option>
+      <option value="./pagina2.html">Página 2</option>
+      <option value="./pagina3.html">Página 3</option>
+      <!-- Adicione mais opções de página conforme necessário -->
+    </select>
+    <div id="page-content"></div>
+    <footer>
+        <p>Feito com ❤️ por<a href="https://github.com/vydhal" target="_blank">Vydhal</a></p>
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#page-select').change(function() {
+        var selectedPage = $(this).val();
+        $('#page-content').load(selectedPage);
+      });
+    });
+  </script>
+</body>
+</html>
